@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="FR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Épreuve Web</title>
+		<link href="/css/tailwind.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div>
+			<div class="flex gap-12">
+				<div class="flex flex-col gap-2 ml-12 mt-16 mb-6">
+					<h2 class="font-semibold text-xl text-center">24 Heures Informatique - Épreuve n°2</h2>
+					<canvas id="tileset" width="336" height="336" tabindex="0"class="size-96 rounded-lg border border-gray-200 outline-none"></canvas>
+				</div>
+				<div class="max-w-6xl w-full mx-auto flex justify-between gap-2" id="form">
+					<div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+						<h2 class="text-2xl font-bold mb-6">Informations du Joueur</h2>
+						<form id="playerForm" class="space-y-4">
+							<div>
+								<label for="playerName" class="block text-sm font-medium text-gray-700">Nom du Joueur</label>
+								<input type="text" id="playerName" name="playerName"class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"/>
+							</div>
+							<div>
+								<label for="playerNumber" class="block text-sm font-medium text-gray-700">Numéro de Joueur</label>
+								<input type="number" id="playerNumber" name="playerNumber"class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"/>
+							</div>
+							<div>
+								<label for="teamPassword" class="block text-sm font-medium text-gray-700">Mot de Passe de l’Équipe</label>
+								<input type="password" id="teamPassword" name="teamPassword"class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"/>
+							</div>
+							<button type="submit"class="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Soumettre</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="flex flex-col gap-2 mx-12 m">
+				<h2 class="font-semibold text-xl">Messagerie</h2>
+				<form action="/say" method="POST">
+					<input type="text" placeholder="Entrer un message..." class="px-4 py-2 border border-gray-200 rounded-full" id="message" />
+				</form>
+				<div id="chat" class="flex flex-col gap-1 overflow-scroll-x"></div>
+			</div>
+		</div>
+		<script src="/js/canvas.js"></script>
+		<script src="/js/player.js"></script>
+		<script src="/js/webSocket.js"></script>
+		<script src="/js/login.js"></script>
+	</body>
+</html>
